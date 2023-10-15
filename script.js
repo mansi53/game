@@ -51,14 +51,6 @@ function updateGameArea() {
             over = true;
         }
     }
-    
-
-    
-    function printscore() {
-        ctx.font = "24px Arial";
-        ctx.fillStyle = "black";
-        ctx.fillText("Score: " + score, 20, 40);
-    }
     printscore();
     setTimeout(updateGameArea,16);}
 }
@@ -76,7 +68,6 @@ function pop(event) {
     for (let i = balloons.length - 1; i >= 0; i--) {
         const balloon = balloons[i];
         const distance = Math.sqrt((mx - balloon.x)**2 + (my - balloon.y)**2);
-            
             if (distance <= r) {
                 balloons.splice(i, 1);
                 if(speed<=4)
@@ -87,6 +78,5 @@ function pop(event) {
         }
     }
     }
-
 updateGameArea();
 setInterval(newBalloon, 1500);
